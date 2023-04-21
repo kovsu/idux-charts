@@ -1,0 +1,29 @@
+name: Preview
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 7
+        run_install: true
+
+      - uses: afc163/surge-preview@v1
+        with:
+          surge_token: ${{ secrets.SURGE_TOKEN }}
+          github_token: ${{ secrets.MY_TOKEN }}
+          dist: packages/site/dist
+          teardown: 'true'
+          build: |
+            pnpm build
+
