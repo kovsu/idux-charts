@@ -9,7 +9,7 @@
     "build": "run-s build:lib build:site",
     "build:lib": "pnpm -r --stream --filter=!./packages/site run build",
     "build:site": "pnpm -r --stream --filter=./packages/site run build",
-    "preview": "vite preview",
+    "preview": "pnpm -r --stream --filter=./packages/site run preview",
     "test:unit": "vitest",
     "test:e2e": "playwright test",
     "lint": "eslint . --ext .vue,.ts,.tsx --fix --ignore-path .gitignore",
