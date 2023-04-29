@@ -32,7 +32,7 @@ jobs:
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
           github_token: ${{ secrets.MY_TOKEN }}
-          dist: ../../packages/site/dist
+          dist: /github/workspace/packages/site/dist
           teardown: 'true'
           build: |
             pnpm build
