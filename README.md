@@ -1,5 +1,6 @@
 <h1 align="center">iDux Charts</h1>
 
+
 > [ECharts](https://echarts.apache.org/) for `Vue`, both `v2.x` and `v3.x`, see [documentation](https://charts.idux.site) for more.
 
 English | [简体中文](README.zh.md)
