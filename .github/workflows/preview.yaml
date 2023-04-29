@@ -32,7 +32,7 @@ jobs:
         with:
           surge_token: ${{ secrets.SURGE_TOKEN }}
           github_token: ${{ secrets.MY_TOKEN }}
-          dist: /github/workspace/packages/site/dist
+          dist: home/runner/work/idux-charts/idux-charts/packages/site/dist
           teardown: 'true'
           build: |
             pnpm build
